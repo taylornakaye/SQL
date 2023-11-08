@@ -1,3 +1,5 @@
+#This project utilizes the follow Superstore data: 
+
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -28,23 +30,23 @@ VALUES
 
 #In this SQL, I'm querying a database within a table to quanitfy statistics about a Superstore's items, pricing and stock.
 
-#1. Write your own SQL query that uses a SELECT statement to order the items by price.
+#1. Use a SELECT statement to order the items by price.
 select * from superstore
 order by price;
 
-#2. Which item is priced the highest?
+#2. Show a statistic about the item prices.
 select MAX(price), item_name
 from superstore;
 
-#3. Which item is priced the lowest?
+#3. Show a statistic about the item prices.
 select MIN(price), item_name
 from superstore;
 
-#4. What is the price average of all items?
+#4. Show a statistic about the item prices.
 select AVG(price)
 from superstore;
 
-#5. What is the total sum of the prices for all "Kitchen Supplies"?
+#5. Show a statistic about the price for items in the category of "Kitchen Supplies". 
 select sum(price), category
 from superstore
 where category="Kitchen Supplies";
