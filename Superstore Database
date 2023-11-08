@@ -24,3 +24,41 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+
+#In this SQL, I'm querying a database within a table to quanitfy statistics about a Superstore's items, pricing and stock.
+
+#1. Write your own SQL query that uses a SELECT statement to order the items by price.
+select * from superstore
+order by price;
+
+#2. Which item is priced the highest?
+select MAX(price), item_name
+from superstore;
+
+#3. Which item is priced the lowest?
+select MIN(price), item_name
+from superstore;
+
+#4. What is the price average of all items?
+select AVG(price)
+from superstore;
+
+#5. What is the total sum of the prices for all "Kitchen Supplies"?
+select sum(price), category
+from superstore
+where category="Kitchen Supplies";
+
+#6. How many of each item are in stock?
+select sum(stock_quantity) as qty_in_stock, item_name
+from superstore
+group by item_name;
+
+#7. How many air purifiers are in stock?
+select sum(stock_quantity), item_name
+from superstore
+where item_name="Air Purifier";
+
+#8. How many items total are in the superstore?
+select count(*) as total_items
+from superstore;
