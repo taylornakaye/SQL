@@ -59,3 +59,28 @@ VALUES
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
 # Analysis: 
+1. Which companies have an average tenure of 5 or more years? 
+
+select company_name, round(avg_employee_tenure)
+from fortune_companies
+where avg_employee_tenure >= 5
+group by company_name;
+
+2. Which companies offer healthcare
+benefits?
+
+select company_name, healthcare_benefits
+from fortune_companies
+where healthcare_benefits=1;
+
+3. How many companies are there total on your database?
+
+select count(*) as total_companies
+from fortune_companies;
+
+4. What is the total number of companies within each industry?
+
+select count (company_name) as total_company_count, industry
+from fortune_companies
+group by industry
+order by total_company_count desc;
