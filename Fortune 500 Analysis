@@ -73,7 +73,7 @@ select company_name, healthcare_benefits
 from fortune_companies
 where healthcare_benefits=1;
 
-3. How many companies are there total on your database?
+3. How many companies are there total?
 
 select count(*) as total_companies
 from fortune_companies;
@@ -84,3 +84,4 @@ select count (company_name) as total_company_count, industry
 from fortune_companies
 group by industry
 order by total_company_count desc;
+
