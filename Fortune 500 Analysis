@@ -85,3 +85,46 @@ from fortune_companies
 group by industry
 order by total_company_count desc;
 
+5. Which companies offer maternity leave for 12 weeks or more and at least 20 PTO days?
+
+select company_name, maternity_leave_weeks, paid_time_off_days
+from fortune_companies
+where maternity_leave_weeks>11
+and paid_time_off_days>19;
+
+6. What is the average revenue for all companies?
+
+select avg(revenue) 
+from fortune_companies;
+
+7. Which companies have a revenue of 260 or more?
+
+select round(revenue), company_name
+from fortune_companies
+where revenue>=260;
+
+8. Which companies have over 100,000 employees?
+
+select company_name, employees
+from fortune_companies
+group by employees
+having employees>100000;
+
+9. Which companies are in the Technology industry?
+
+select industry, company_name
+from fortune_companies
+where industry="Technology";
+
+10. Group the data in a new way using a CASE statement.
+
+select company_name, avg_employee_tenure,
+case
+when avg_employee_tenure>=7.0 then "Highly likely to stay employed longer"
+when avg_employee_tenure>=5.0 then "Somewhat likely to stay employeed longer"
+else "Less likely to stay employed longer"
+end as employee_tenure_at_company
+from fortune_companies
+order by employee_tenure_at_company;
+
+
