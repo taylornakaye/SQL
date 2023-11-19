@@ -59,6 +59,7 @@ VALUES
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
 # Analysis: 
+
 1. Which companies have an average tenure of 5 or more years? 
 
 select company_name, round(avg_employee_tenure)
