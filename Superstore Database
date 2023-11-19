@@ -27,8 +27,9 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
-
 #In this SQL, I'm querying a database within a table to quanitfy statistics about a Superstore's items, pricing and stock.
+
+#Analysis
 
 #1. Use a SELECT statement to order the items by price.
 select * from superstore
