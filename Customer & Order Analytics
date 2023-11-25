@@ -66,10 +66,27 @@ group by Product
 
 #9. Which locations in New York received at least 3 orders in January, and how many orders did they each receive?
 
+select distinct location, count(quantity) as orders
+from JanSales
+where location like '%New York%'
+group by location
+having orders >=3
+
 #10. How many of each type of headphone were sold in February?
+
+select distinct product, count(product) as total_sold
+from FebSales
+where product like '%headphones%'
+group by product
 
 #11. What was the average amount spent per account in February?
 
 #12. What was the average quantity of products purchased per account in February?
 
 #13. Which product brought in the most revenue in January and how much revenue did it bring total?
+
+select product, sum(price) as total_revenue
+from JanSales
+group by product
+order by total_revenue desc
+limit 1
